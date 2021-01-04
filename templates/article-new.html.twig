@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>New Article</title>
+</head>
+
+<body class="mb-0 bg-light text-secondary"> 
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="container"> 
+  <form method="post" class="m-5">
+    <h1 class="text-center">Submit form</h1>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Name</label>
+        <input name="name" type="text" class="form-control {% if errors.name is defined %}is-invalid{% endif %}" id="name" value="{{ formData.name }}">
+          {% if errors.name is defined %}
+          <div class="invalid-feedback">
+          {{ messages.name }}
+          </div>
+          {% endif %}
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description</label>
+        <textarea name="description" class="form-control {% if errors.description is defined %}is-invalid{% endif %}" id="description" rows="3" value="{{ formData.description }}"></textarea>
+        {% if errors.description is defined %}
+        <div class="invalid-feedback">
+        {{ messages.description }}
+        </div>
+        {% endif %}
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Price</label>
+        <input name="price" type="text" class="form-control {% if errors.price is defined %}is-invalid{% endif %}" id="price" value="{{ formData.price }}">
+        {% if errors.price is defined %}
+        <div class="invalid-feedback">
+        {{ messages.price }}
+        </div>
+        {% endif %}
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Quantity</label>
+        <input name="quantity" type="text" class="form-control {% if errors.quantity is defined %}is-invalid{% endif %}" id="quantity" value="{{ formData.quantity }}">
+        {% if errors.quantity is defined %}
+        <div class="invalid-feedback">
+        {{ messages.quantity }}
+        </div>
+        {% endif %}
+        </div>
+      <button type="submit" class="btn btn-outline-secondary mb-5">Add article</button>
+  </form>
+</div>
+
+<div class="bg-secondary m-0 w-100 fixed-bottom">
+  <p class="text-center text-white p-3 m-0">Copyrights</p>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+</body>
+</html>
